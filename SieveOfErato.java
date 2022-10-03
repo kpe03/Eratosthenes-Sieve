@@ -5,8 +5,8 @@ public class SieveOfErato {
 	
 	public static void main(String[] args) {
 		//variables
-		int startValue = 0;						//where the sieve will start
-		int stopValue = 0;						//size of array-1
+		int startValue = 0;				//where the sieve will start
+		int stopValue = 0;				//size of array-1
 		long startTime = System.nanoTime();		//to count how long program takes in ns
 		
 		
@@ -16,7 +16,7 @@ public class SieveOfErato {
 				+ "\n***********************************");
 		
 		
-		//get start value
+		//check for commandline parameter
 		if (args.length == 1) {
 			startValue = Integer.parseInt(args[0]);
 			System.out.println("\nEnter a stop value: ");
@@ -28,6 +28,7 @@ public class SieveOfErato {
 			startValue = Integer.parseInt(args[0]);
 			stopValue = Integer.parseInt(args[1]);
 		}
+		//if none, get input
 		else {
 			Scanner b = new Scanner(System.in);
 			
@@ -58,7 +59,7 @@ public class SieveOfErato {
 	public static void sieveAlgorithm(int startValue, int stopValue) {
 		
 		boolean[] sieveArray = new boolean[stopValue + 1];		//bool array to store true/false values
-		int totalPrimes = 0; 									//counter for num of primes 
+		int totalPrimes = 0; 						//counter for num of primes 
 		
 		//set every value to true
 		for (int i = 2; i <= stopValue; i++ ) {
